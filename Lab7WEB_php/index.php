@@ -6,13 +6,14 @@
     <title>Praktikum PHP</title>
 </head>
 <body>
+    <!-- latihan 1 -->
     <h1>Belajar PHP </h1>
     <?php
     echo "<p> PHP berhasil di jalankan. </p>";
     echo "<p> waktu server: " . date("d-m-Y H:i:s") . "</p>";
     ?>
 
-
+<!-- Latihan 2 -->
     <?php
     $nama = "Siti";
     $tugas = 85;
@@ -34,6 +35,7 @@
     echo "Predikat: " . $predikat;
     ?>
 
+<!-- Latihan 3 -->
 <?php
 $mahasiswa = ["Ridwan", "Ilham", "Ahmad", "Raihan"];
 echo "<h3>Daftar Mahasiswa</h3><ol>";
@@ -43,6 +45,7 @@ foreach ($mahasiswa as $nama) {
 echo "</ol>";
 ?>
 
+<!-- Latihan 4 -->
 <?php 
 function hitungDiskon($harga, $persen) { 
     $potongan = $harga * ($persen / 100);
@@ -52,6 +55,7 @@ $hargaAkhir = hitungDiskon(15000, 10);
 echo "harga setelah diskon: Rp" . number_format($hargaAkhir, 0, ", ", ".");
 ?>
 
+<!-- Latihan 5 -->
 <!-- cari.php -->
     <form method="GET" action="">
     <label for="kata">Kata kunci:</label>
@@ -65,6 +69,29 @@ echo "harga setelah diskon: Rp" . number_format($hargaAkhir, 0, ", ", ".");
     }
     ?>
 
+<!-- Latihan 6 -->
+ <form method="POST" action="">
+<label for="nama">Nama:</label>
+<input id="nama" name="nama" type="text" required>
+<label for="prodi">Program Studi:</label>
+<input id="prodi" name="prodi" type="text" required>
+<button type="submit" name="kirim">Kirim Data</button>
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+$nama = trim($_POST["nama"] ?? "");
+$prodi = trim($_POST["prodi"] ?? "");
+if ($nama === "" || $prodi === "") {
+echo "<p>Semua kolom wajib diisi.</p>";
+} else {
+echo "<h3>Data diterima</h3>";
+echo "Nama: " . htmlspecialchars($nama, ENT_QUOTES, "UTF-8") . "<br>";
+echo "Program Studi: " . htmlspecialchars($prodi, ENT_QUOTES, "UTF-8");
+}
+}
+?>
+
+<!-- Latihan 7 -->
 <?php
 $hasil = null;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -82,6 +109,7 @@ $subtotal = $harga * $jumlah;
 }
 }
 ?>
+
 <form method="POST">
 <label>Nama barang <input name="barang" required></label>
 <label>Harga <input name="harga" type="number" min="0" step="0.01" required></label>
