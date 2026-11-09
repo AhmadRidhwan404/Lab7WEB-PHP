@@ -1,5 +1,8 @@
 # DOKUMENTASI PRAKTIKUM PHP
 
+**Nama : Ahmad Ridhwan Ilham 312510222**
+**Kelas : I251B**
+
 ## 1. Deskripsi Project
 
 Project ini merupakan hasil praktikum pemrograman PHP yang terdiri dari latihan dasar PHP dan mini project aplikasi formulir data mahasiswa.
